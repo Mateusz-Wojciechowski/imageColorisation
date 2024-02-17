@@ -9,7 +9,7 @@ transform = transforms.Compose([
     transforms.ToTensor()
 ])
 
-dataset = GrayColorDataset(color_dir=r'/content/my_data/landscapeImages/color', gray_dir=r'/content/my_data/landscapeImages/gray', transform=transform)
+dataset = GrayColorDataset(color_dir=r'/content/my_data/landscape Images/color', gray_dir=r'/content/my_data/landscape Images/gray', transform=transform)
 
 train_size = int(0.8 * len(dataset))
 test_size = len(dataset) - train_size
