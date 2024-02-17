@@ -9,7 +9,7 @@ transform = transforms.Compose([
     transforms.ToTensor()
 ])
 
-dataset = GrayColorDataset(color_dir='C:\\Users\\mwojc\\PycharmProjects\\imageColorisation\\Images\\color', gray_dir='C:\\Users\\mwojc\\PycharmProjects\\imageColorisation\\Images\\gray', transform=transform)
+dataset = GrayColorDataset(color_dir=r'C:\Users\mwojc\PycharmProjects\imageColorisation\Images\color', gray_dir=r'C:\Users\mwojc\PycharmProjects\imageColorisation\Images\gray', transform=transform)
 
 train_size = int(0.8 * len(dataset))
 test_size = len(dataset) - train_size
