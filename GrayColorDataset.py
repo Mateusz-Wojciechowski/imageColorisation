@@ -1,6 +1,8 @@
 import os
 from PIL import Image
 from torch.utils.data import Dataset
+import torch
+
 
 class GrayColorDataset(Dataset):
     def __init__(self, color_dir, gray_dir, transform=None):
@@ -23,5 +25,6 @@ class GrayColorDataset(Dataset):
             grayscale_image = self.transform(grayscale_image)
             color_image = self.transform(color_image)
 
-        return grayscale_image, color_image
+            grayscale_image = grayscale_image.repeat(3, 1, 1)
 
+        return grayscale_image, color_image
