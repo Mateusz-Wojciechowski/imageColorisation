@@ -15,7 +15,7 @@ torch.manual_seed(0)
 #dataset = GrayColorDataset(color_dir=r'Images/color', gray_dir=r'Images/gray', transform=transform)
 dataset = GrayColorDataset(color_dir=r'/content/my_data/landscape Images/color', gray_dir=r'/content/my_data/landscape Images/gray', transform=transform)
 
-train_size = int(0.6 * len(dataset))
+train_size = int(0.3 * len(dataset))
 test_size = len(dataset) - train_size
 train_dataset, test_dataset = data.random_split(dataset, [train_size, test_size])
 
