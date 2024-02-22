@@ -3,13 +3,13 @@ from AutoEncoderRGB import AutoEncoderRGB
 import torch.optim as optim
 from constants import LEARNING_RATE, NUM_EPOCHS
 import torch.nn as nn
+import torch
 
 model = AutoEncoderRGB()
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 loss_fn = nn.MSELoss()
 
 for epoch in range(NUM_EPOCHS):
-    print(f"Epoch: {epoch}")
     epoch_loss = 0
     model.train()
 
@@ -23,5 +23,7 @@ for epoch in range(NUM_EPOCHS):
         epoch_loss += loss
 
     epoch_loss = epoch_loss / len(train_loader)
-    if epoch % 10 == 0:
-        print(f"Epoch: {epoch + 1}, Loss: {epoch_loss}")
+    print(f"Epoch: {epoch + 1}, Loss: {epoch_loss}")
+
+
+torch.save(model.state_dict(), 'model75epochsNew.pth')
